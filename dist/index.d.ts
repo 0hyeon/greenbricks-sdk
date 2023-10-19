@@ -8,4 +8,5 @@ declare function sendTrackingData1({ name, event, sex, type }: TrackingData): Pr
 declare function sendTrackingData2({ name, event, sex, type }: TrackingData): Promise<any>;
 declare function sendTrackingData3({ name, event, sex, type }: TrackingData): Promise<any>;
 declare function sendTrackingData4({ name, event, sex, type }: TrackingData): Promise<any>;
-export { sendTrackingData1, sendTrackingData2, sendTrackingData3, sendTrackingData4, };
+declare const curriedSendTrackingData: (a: TrackingData) => (b: unknown) => (c: unknown) => Promise<any>;
+export { curriedSendTrackingData, sendTrackingData1, sendTrackingData2, sendTrackingData3, sendTrackingData4, };

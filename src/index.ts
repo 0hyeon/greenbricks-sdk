@@ -6,13 +6,19 @@ interface TrackingData {
   type?: string
 }
 const curry =
-  <A, B, C, D>(f: (a: A, b: B, c: C) => D) =>
+  <A, B, C, D, E>(f: (a: A, b: B, c: C, d: D) => E) =>
   (a: A) =>
   (b: B) =>
   (c: C) =>
-    f(a, b, c)
+  (d: D) =>
+    f(a, b, c, d)
 
-async function sendTrackingData1({ name, event, sex, type }: TrackingData) {
+async function sendTrackingData1(
+  name: string,
+  event: string,
+  sex: string,
+  type: string,
+) {
   try {
     const response = await axios.get(
       `https://web-crawaling.vercel.app/api/post-tracking?name=${name}&event=${event}&sex=${sex}&type=${type}`,

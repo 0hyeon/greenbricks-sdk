@@ -20,6 +20,7 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 // src/index.ts
 var src_exports = {};
 __export(src_exports, {
+  curriedSendTrackingData: () => curriedSendTrackingData,
   sendTrackingData1: () => sendTrackingData1,
   sendTrackingData2: () => sendTrackingData2,
   sendTrackingData3: () => sendTrackingData3,
@@ -2150,6 +2151,7 @@ var {
 } = axios_default;
 
 // src/index.ts
+var curry = (f) => (a) => (b) => (c) => f(a, b, c);
 async function sendTrackingData1({ name, event, sex, type }) {
   try {
     const response = await axios_default.get(
@@ -2194,4 +2196,5 @@ async function sendTrackingData4({ name, event, sex, type }) {
     throw error;
   }
 }
+var curriedSendTrackingData = curry(sendTrackingData1);
 //# sourceMappingURL=index.cjs.map

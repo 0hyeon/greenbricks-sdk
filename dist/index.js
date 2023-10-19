@@ -2121,6 +2121,7 @@ var {
 } = axios_default;
 
 // src/index.ts
+var curry = (f) => (a) => (b) => (c) => f(a, b, c);
 async function sendTrackingData1({ name, event, sex, type }) {
   try {
     const response = await axios_default.get(
@@ -2165,7 +2166,9 @@ async function sendTrackingData4({ name, event, sex, type }) {
     throw error;
   }
 }
+var curriedSendTrackingData = curry(sendTrackingData1);
 export {
+  curriedSendTrackingData,
   sendTrackingData1,
   sendTrackingData2,
   sendTrackingData3,
