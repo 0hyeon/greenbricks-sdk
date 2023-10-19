@@ -2151,8 +2151,8 @@ var {
 } = axios_default;
 
 // src/index.ts
-var curry = (f) => (a) => (b) => (c) => f(a, b, c);
-async function sendTrackingData1({ name, event, sex, type }) {
+var curry = (f) => (a) => (b) => (c) => (d) => f(a, b, c, d);
+async function sendTrackingData1(name, event, sex, type) {
   try {
     const response = await axios_default.get(
       `https://web-crawaling.vercel.app/api/post-tracking?name=${name}&event=${event}&sex=${sex}&type=${type}`
