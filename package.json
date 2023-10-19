@@ -1,6 +1,6 @@
 {
   "name": "greenbricks-sdk",
-  "version": "2.2.2",
+  "version": "3.0.0",
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
