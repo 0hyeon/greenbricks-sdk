@@ -1,0 +1,30 @@
+{
+  "name": "greenbricks-sdk",
+  "version": "2.2.2",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepack": "yarn build",
+    "build": "yarn clean && yarn build:tsc && yarn build:js",
+    "build:tsc": "yarn tsc --emitDeclarationOnly",
+    "build:js": "node build.js",
+    "clean": "rm -rf dist"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.8.7",
+    "esbuild": "^0.19.5",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "axios": "^1.5.1"
+  }
+}
