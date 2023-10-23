@@ -22,13 +22,10 @@ async function sendTrackingData1(
   event: string,
   sex: string,
   type: string,
-  adid: string,
 ) {
   try {
-    const adid = CryptoJS.AES.encrypt(name, 'secret key').toString()
-    console.log('adid : ', adid)
     const response = await axios.get(
-      `https://web-crawaling.vercel.app/api/post-tracking?name=${name}&event=${event}&sex=${sex}&type=${type}adid=${adid}`,
+      `https://web-crawaling.vercel.app/api/post-tracking?name=${name}&event=${event}&sex=${sex}&type=${type}`,
     )
     return response.data
   } catch (error) {
